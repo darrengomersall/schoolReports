@@ -4,13 +4,81 @@
 |--------------------------------------------------------------------------
  */
 
-/*------------- | CONDUIT | ------------- */
+/*------------- | LATO BLACK | ------------- */
+@font-face {
+    font-family: 'LatoBlack';
+    src: url('../fonts/Lato-Black.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Black.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Black.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
 
 
-/*------------- | GOTHAM | ------------- */
+/*------------- | LATO BOLD | ------------- */
+@font-face {
+    font-family: 'LatoBold';
+    src: url('../fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Bold.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Bold.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
 
 
-/*------------- | TAHOMA | ------------- */
+/*------------- | LATO ITALIC | ------------- */
+@font-face {
+    font-family: 'LatoWeb';
+    src: url('../fonts/Lato-Italic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Italic.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Italic.woff') format('woff'); /* Modern Browsers */
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/*------------- | LATO LIGHT | ------------- */
+@font-face {
+    font-family: 'LatoLight';
+    src: url('../fonts/Lato-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Light.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Light.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/*------------- | LATO REGULAR | ------------- */
+@font-face {
+    font-family: 'LatoRegular';
+    src: url('../fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Regular.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+/*------------- | LATO THIN | ------------- */
+@font-face {
+    font-family: 'LatoThin';
+    src: url('../fonts/Lato-Thin.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Lato-Thin.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Lato-Thin.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +95,9 @@
  */
 
 body {
+    margin-top: 50px;
     padding-bottom: 0;
+
 }
 
 hr {
@@ -39,8 +109,6 @@ hr {
 ul {
     margin-bottom: 0.5rem;
 }
-
-
 
 
 /*
@@ -56,7 +124,6 @@ ul {
 .dropdown-menu {
     margin: 0;
     border-color: #ffffff;
-    font-family: "GothamBook", Helvetica, sans-serif;
 }
 
 .dropdown-item:hover {
@@ -66,21 +133,29 @@ ul {
 
 .navbar {
     padding: 0;
+    background-color: #23408f;
+
+}
+
+.navbar .navbar-brand {
+    font-family: 'LatoBlack', Helvetica, Arial, sans-serif;
+
+    color: #ffffff;
 }
 
 .nav-item {
-    font-family: "ConduitBold", Helvetica, sans-serif;
-    font-size: 1.4rem;
+    font-family: 'LatoBlack', Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
     text-transform: uppercase;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #ffffff;
+    color: #000000;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    background-color: #f0037f;
-    color: #183262;
+    background-color: #732b90;
+    color: #ffffff;
 }
 
 /*
