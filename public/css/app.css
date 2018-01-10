@@ -86,6 +86,16 @@
 |--------------------------------------------------------------------------
  */
 
+.btn-dark {
+    background-color: #50d8d7;
+    border-color: #50d8d7;
+}
+
+.btn-dark:hover {
+    background-color: #732b90;
+    border-color: #732b90;
+}
+
 .random {
     color: #7180ac;
     color: #a8d0db;
