@@ -86,6 +86,24 @@
 |--------------------------------------------------------------------------
  */
 
+.random {
+    color: #7180ac;
+    color: #a8d0db;
+    color: #e49273;
+    color: #a37a74;
+    color: #50d8d7;
+    color: #474044;
+    color: #ba324f;
+    color: #cce6f4;
+    color: #e2adf2;
+    color: #ffd400;
+    color: #119da4;
+    color: #605770;
+    color: #d74e09;
+    color: #50ffb1;
+    color: #8b8c89;
+}
+
 
 
 /*
@@ -97,7 +115,15 @@
 body {
     margin-top: 50px;
     padding-bottom: 0;
+    background-color: #fbfef9;
+    font-family: 'LatoRegular', Helvetica, Arial, sans-serif;
+    color: #474044;
 
+}
+
+h1 {
+    font-family: 'LatoBold', Helvetica, Arial, sans-serif;
+    color: #474044;
 }
 
 hr {
@@ -157,6 +183,18 @@ ul {
     background-color: #732b90;
     color: #ffffff;
 }
+
+/*
+|--------------------------------------------------------------------------
+| TABLES
+|--------------------------------------------------------------------------
+ */
+    th {
+        font-family: 'LatoBlack', Helvetica, Arial, sans-serif;
+        color: #23408f;
+    }
+
+
 
 /*
 |--------------------------------------------------------------------------
