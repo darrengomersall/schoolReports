@@ -1,6 +1,3 @@
-<?php
-var_dump($classes)
-?>
 @extends('partials.base')
     @section('content')
         <div class="row">
@@ -29,7 +26,7 @@ var_dump($classes)
                             <td>{{ $class['teacher']['name'] }}</td>
                             <td>{{ $class['class_code'] }}</td>
                             <td>{{ $class['pupils_count'] }}</td>
-                            <td><a class="btn btn-dark" href="/class/{{ $class['id'] }}">View Class</a> </td>
+                            <td><a class="btn btn-dark" href="/class/view/{{ $class['id'] }}">View Class</a> </td>
                         </tr>
                     @endforeach
                     </tbody>
