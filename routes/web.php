@@ -32,5 +32,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 // ADD NEW - SAVE
     Route::post('/pupil/store', 'PupilController@store');
 
+/*------------- | CLASSES | ------------- */
+// VIEW ALL
+    Route::get('/classes/', 'ClassGroupController@index');
+
+// VIEW SINGLE
+    Route::get('/class/view/{id}', 'ClassGroupController@show');
+
+// ADD NEW - FORM
+    Route::get('/pupil/add', 'ClassGroupController@create');
+
+// ADD NEW - SAVE
+    Route::post('/pupil/store', 'ClassGroupController@store');
+
+
 
 

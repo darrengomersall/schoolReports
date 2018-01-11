@@ -157,6 +157,9 @@ ul {
     margin-bottom: 0.5rem;
 }
 
+table th, table td {
+    text-align: center;
+}
 
 
 

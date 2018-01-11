@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ClassGroup;
 
-class ClassController extends Controller
+class ClassGroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class ClassController extends Controller
     public function index()
     {
         //
-        return view('class.index');
+        return view('class.index', ['classes' => ClassGroup::with('teacher')->withCount('pupils')->get()->toArray()]);
     }
 
     /**
