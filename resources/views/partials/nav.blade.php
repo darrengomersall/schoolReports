@@ -9,22 +9,23 @@
                             <ul class="navbar-nav mr-auto">
                                 @if (Route::has('login'))
                                     @if (Auth::check())
-                                    <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="" id="dropdown-pupils" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pupils</a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdown-pupils">
-                                        <a class="dropdown-item" href="/pupils/">View Class List</a>
-                                        <a class="dropdown-item" href="/pupil/add">Add a Pupil</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-                                    <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle"  id="dropdown-class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Class</a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdown-class">
+                                                <a class="dropdown-item" href="#">View Class</a>
+                                                <a class="dropdown-item" href="#">Another action</a>
+                                                <a class="dropdown-item" href="#">Something else here</a>
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"  id="dropdown-pupil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pupils</a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown-pupil">
+                                            <a class="dropdown-item" href="/pupils/">View Class List</a>
+                                            <a class="dropdown-item" href="/pupil/add">Add a Pupil</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
                                     @endif
                                 @endif
                             </ul>
