@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pupil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PupilController extends Controller
 {
@@ -43,7 +44,22 @@ class PupilController extends Controller
     public function store(Request $request)
     {
         //
-        return view('pupil.store');
+        $pupil = new Pupil();
+        $pupil->firstname = $request->firstname;
+        $pupil->lastname = $request->lastname;
+        $pupil->cemis_num = $request->cemis_num;
+        $pupil->dob = $request->dob_year . "-" . $request->dob_month . "-" . $request->dob_day;
+        $pupil->language = $request->language;
+        if ($pupil->save())
+        {
+            $request->session()->flash('success', $pupil->firstname . " " . $pupil->lastname . " was added successfully");
+        }
+        else
+        {
+            $request->session()->flash('error', "There was a saving error");
+        }
+        return view('pupil/create');
+
     }
 
     /**

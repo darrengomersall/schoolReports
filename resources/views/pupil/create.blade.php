@@ -7,7 +7,18 @@
                 </h1>
             </div>
         </div>
+        @if (\Illuminate\Support\Facades\Session::has('success'))
         <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                   Pupil loaded succesfully
+                </h4>
+            </div>
+        </div>
+        @endif
+
+
+            <div class="row">
             <div class="col-lg-12">
                 <form method="POST" action="/pupil/store">
                     {{ csrf_field() }}
@@ -50,7 +61,7 @@
                                 <input id="dob_year" style="width: 50%" name="dob_year" type="text" placeholder="YYYY" value="{{ old('dob_year') }}"  />
                             </div>
                             <div class="col-3 ">
-                                <input id="dob_month" name="dob_year" type="text" placeholder="MM" value="{{ old('dob_month') }}" />
+                                <input id="dob_month" name="dob_month" type="text" placeholder="MM" value="{{ old('dob_month') }}" />
                             </div>
                             <div class="col-3 ">
                                 <input id="dob_year" name="dob_day" type="text" placeholder="DD" value="{{ old('dob_day') }}" />

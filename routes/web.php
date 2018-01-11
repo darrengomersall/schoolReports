@@ -30,7 +30,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/pupil/add', 'PupilController@create');
 
 // ADD NEW - SAVE
-    Route::post('/pupil/add', 'PupilController@store');
+    Route::post('/pupil/store', 'PupilController@store');
 
 
 
