@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h4>
-                   Pupil loaded succesfully
+                   {{ \Illuminate\Support\Facades\Session::get('success') }}
                 </h4>
             </div>
         </div>
