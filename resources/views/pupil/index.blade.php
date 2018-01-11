@@ -24,7 +24,7 @@
                                 <td>{{ $pupil->cemis_num }}</td>
                                 <td>{{ $pupil->dob }}</td>
                                 <td style="text-transform: uppercase">{{ $pupil->language }}</td>
-                                <td><a class="btn btn-dark" href="/pupil/{{ $pupil->id }}">View</a></td>
+                                <td><a class="btn btn-dark" href="/pupil/view/{{ $pupil->id }}">View</a></td>
                             </tr>
                         @endforeach
                     </tbody>

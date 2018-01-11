@@ -31,6 +31,7 @@ class PupilController extends Controller
     public function create()
     {
         //
+        return view('pupil.create');
     }
 
     /**
@@ -42,6 +43,7 @@ class PupilController extends Controller
     public function store(Request $request)
     {
         //
+        return view('pupil.store');
     }
 
     /**

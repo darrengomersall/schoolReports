@@ -13,7 +13,7 @@
                                     <a class="nav-link dropdown-toggle" href="" id="dropdown-pupils" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pupils</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdown-pupils">
                                         <a class="dropdown-item" href="/pupils/">View Class List</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="/pupil/add">Add a Pupil</a>
                                         <a class="dropdown-item" href="#">Something else here</a>
                                     </div>
                                 </li>

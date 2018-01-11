@@ -131,9 +131,20 @@ body {
 
 }
 
+form .row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+form .col-1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 h1 {
     font-family: 'LatoBold', Helvetica, Arial, sans-serif;
     color: #474044;
+    text-transform: uppercase;
 }
 
 hr {
@@ -145,6 +156,8 @@ hr {
 ul {
     margin-bottom: 0.5rem;
 }
+
+
 
 
 /*

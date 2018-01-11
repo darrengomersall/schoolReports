@@ -20,6 +20,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 /*------------- | PUPILS | ------------- */
-Route::get('/pupils/', 'PupilController@index');
-Route::get('/pupil/{id}', 'PupilController@show');
+// VIEW ALL
+    Route::get('/pupils/', 'PupilController@index');
+
+// VIEW SINGLE
+    Route::get('/pupil/view/{id}', 'PupilController@show');
+
+// ADD NEW - FORM
+    Route::get('/pupil/add', 'PupilController@create');
+
+// ADD NEW - SAVE
+    Route::post('/pupil/add', 'PupilController@store');
+
+
 
