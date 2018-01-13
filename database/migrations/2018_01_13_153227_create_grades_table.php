@@ -16,7 +16,7 @@ class CreateGradesTable extends Migration
         Schema::create('grades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('grade_head');
+            $table->integer('head_id');
             $table->timestamps();
         });
     }

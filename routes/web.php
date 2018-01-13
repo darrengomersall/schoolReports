@@ -17,33 +17,59 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*
+|--------------------------------------------------------------------------
+| Auth required
+|--------------------------------------------------------------------------
+|
+| All routes require logged in user
+|
+*/
 
-/*------------- | PUPILS | ------------- */
-// VIEW ALL
-    Route::get('/pupils/', 'PupilController@index');
+Route::group([ 'middleware' => ['auth'] ], function () {
 
-// VIEW SINGLE
-    Route::get('/pupil/view/{id}', 'PupilController@show');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-// ADD NEW - FORM
-    Route::get('/pupil/add', 'PupilController@create');
+    /*------------- | GRADES | ------------- */
+    // VIEW ALL
+    Route::get('/grades/', 'GradeController@index');
 
-// ADD NEW - SAVE
-    Route::post('/pupil/store', 'PupilController@store');
+    // VIEW SINGLE
+    Route::get('/grade/view/{id}', 'GradeController@show');
 
-/*------------- | CLASSES | ------------- */
-// VIEW ALL
-    Route::get('/classes/', 'ClassGroupController@index');
-
-// VIEW SINGLE
-    Route::get('/class/view/{id}', 'ClassGroupController@show');
-
-// ADD NEW - FORM
+    // ADD NEW - FORM
     Route::get('/pupil/add', 'ClassGroupController@create');
 
-// ADD NEW - SAVE
+    // ADD NEW - SAVE
     Route::post('/pupil/store', 'ClassGroupController@store');
+
+    /*------------- | CLASSES | ------------- */
+    // VIEW ALL
+    Route::get('/classes/', 'ClassGroupController@index');
+
+    // VIEW SINGLE
+    Route::get('/class/view/{id}', 'ClassGroupController@show');
+
+    // ADD NEW - FORM
+    Route::get('/pupil/add', 'ClassGroupController@create');
+
+    // ADD NEW - SAVE
+    Route::post('/pupil/store', 'ClassGroupController@store');
+
+    /*------------- | PUPILS | ------------- */
+    // VIEW ALL
+    Route::get('/pupils/', 'PupilController@index');
+
+    // VIEW SINGLE
+    Route::get('/pupil/view/{id}', 'PupilController@show');
+
+    // ADD NEW - FORM
+    Route::get('/pupil/add', 'PupilController@create');
+
+    // ADD NEW - SAVE
+    Route::post('/pupil/store', 'PupilController@store');
+
+} );
 
 
 

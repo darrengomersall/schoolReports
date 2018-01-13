@@ -10,14 +10,19 @@
                                 @if (Route::has('login'))
                                     @if (Auth::check())
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle"  id="dropdown-class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Class</a>
+                                            <a class="nav-link "  id="dropdown-class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grades</a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdown-class">
+                                                <a class="dropdown-item" href="/grades">View All Grades</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle"  id="dropdown-class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classes</a>
                                             <div class="dropdown-menu" aria-labelledby="dropdown-class">
                                                 <a class="dropdown-item" href="#">View Class</a>
                                                 <a class="dropdown-item" href="/classes">View All Classes</a>
                                                 <a class="dropdown-item" href="#">Something else here</a>
                                             </div>
                                         </li>
-
                                         <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle"  id="dropdown-pupil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pupils</a>
                                         <div class="dropdown-menu" aria-labelledby="dropdown-pupil">

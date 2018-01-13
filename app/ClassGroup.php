@@ -11,7 +11,7 @@ class ClassGroup extends Model
 
     public function pupils ()
     {
-        return $this->belongsToMany('App\Pupil','pupils_classes', 'class_id', 'pupil_id');
+        return $this->hasMany('App\Pupil', 'class_id', 'id');
     }
 
     public function teacher ()
