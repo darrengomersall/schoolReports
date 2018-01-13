@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>
-                    Class Details: {{ $class->class_code }} - {{ $class->teacher->name }}
+                    Class Details: {{ $class->class_code }} - {{ $class->teacher->firstname . " " . $class->teacher->lastname }}
                 </h1>
             </div>
         </div>

@@ -30,6 +30,11 @@ Route::group([ 'middleware' => ['auth'] ], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+    /*------------- | STAFF | ------------- */
+    // TEACHERS
+    Route::get('/teachers/', 'StaffController@index');
+
+
     /*------------- | GRADES | ------------- */
     // VIEW ALL
     Route::get('/grades/', 'GradeController@index');
