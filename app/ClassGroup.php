@@ -18,4 +18,9 @@ class ClassGroup extends Model
     {
         return $this->hasOne('App\User', 'id', 'teacher_id');
     }
+
+    public function grade ()
+    {
+        return $this->hasOne('App\Grade');
+    }
 }

@@ -11,4 +11,5 @@ class Pupil extends Model
     {
         return $this->belongsTo('App\ClassGroup');
     }
+
 }
