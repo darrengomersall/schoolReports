@@ -8,6 +8,7 @@
     <title>{{ config('app.name', 'Darling College') }}</title>
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
 @include('partials.nav')

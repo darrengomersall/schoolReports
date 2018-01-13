@@ -48,6 +48,7 @@ class ClassGroupController extends Controller
     public function show($id)
     {
         //
+        return view('class.show', [ 'class' => ClassGroup::where('id', '=', $id)->with('teacher', 'pupils')->withCount('pupils')->get()->first() ] );
     }
 
     /**
