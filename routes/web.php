@@ -74,6 +74,11 @@ Route::group([ 'middleware' => ['auth'] ], function () {
     // ADD NEW - SAVE
     Route::post('/pupil/store', 'PupilController@store');
 
+    /*------------- | REPORTS | ------------- */
+    // VIEW SINGLE
+    Route::get('/report/view/{id}', 'ReportController@show');
+
+
 } );
 
 

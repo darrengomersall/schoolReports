@@ -66,12 +66,9 @@ var_dump($pupil)
                 <tbody>
                 @foreach($pupil->reports as $report)
                     <tr>
-                        <td>{{ $pupil->firstname }}</td>
-                        <td>{{ $pupil->lastname }}</td>
-                        <td>{{ $pupil->cemis_num }}</td>
-                        <td>{{ $pupil->dob }}</td>
+                        <td>{{ $report->id }}</td>
                         <td style="text-transform: uppercase">{{ $pupil->language }}</td>
-                        <td><a class="btn btn-dark" href="/pupil/view/{{ $pupil->id }}">View</a></td>
+                        <td><a class="btn btn-dark" href="/report/view/{{ $report->id }}">View Report</a></td>
                     </tr>
                 @endforeach
                 </tbody>

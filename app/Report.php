@@ -9,7 +9,7 @@ class Report extends Model
     //
     public function pupil ()
     {
-        return $this->hasOne('App\Pupil');
+        return $this->belongsTo('App\Pupil');
     }
 
 }
