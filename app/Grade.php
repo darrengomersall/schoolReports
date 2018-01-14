@@ -22,4 +22,5 @@ class Grade extends Model
         return $this->hasManyThrough('App\Pupil', 'App\ClassGroup', 'grade_id', 'class_id', 'id');
     }
 
+
 }

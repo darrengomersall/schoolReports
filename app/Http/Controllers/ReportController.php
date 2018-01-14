@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Pupil;
 use App\Report;
+use App\ClassGroup;
+use App\Subject;
+use App\SubjectGroup;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -48,7 +51,17 @@ class ReportController extends Controller
     public function show($id)
     {
         //
-        return view ('report.show', [ 'report' => Report::where('id', '=', $id)->with('pupil')->get()->first()]);
+        $report = Report::where('id', '=', $id)->with('pupil', 'report_class')->get()->first();
+
+        $class = ClassGroup::where('id', '=', $report->report_class->first()->id)->with('grade')->get()->first();
+
+        $subject_data = SubjectGroup::where('grade_id', '=', $class->grade->id)->with('subjects')->get();
+
+        return view ('report.show', [
+            'report' => $report,
+            'class' => $class,
+            'subject_data' => $subject_data
+            ]);
     }
 
     /**

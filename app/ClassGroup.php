@@ -21,6 +21,6 @@ class ClassGroup extends Model
 
     public function grade ()
     {
-        return $this->hasOne('App\Grade');
+        return $this->belongsTo('App\Grade');
     }
 }

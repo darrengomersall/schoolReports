@@ -12,4 +12,11 @@ class Report extends Model
         return $this->belongsTo('App\Pupil');
     }
 
+    public function report_class ()
+    {
+        return $this->hasOne('App\ClassGroup', 'id', 'class_id');
+    }
+
+
+
 }
