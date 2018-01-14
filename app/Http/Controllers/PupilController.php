@@ -71,7 +71,7 @@ class PupilController extends Controller
     public function show($id)
     {
         //
-        return view('pupil.show', ['pupil' => Pupil::where('id', '=', $id)->get()->first()]);
+        return view('pupil.show', ['pupil' => Pupil::where('id', '=', $id)->with('reports')->withCount('reports')->get()->first()]);
     }
 
     /**

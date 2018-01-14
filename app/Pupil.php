@@ -18,4 +18,9 @@ class Pupil extends Model
 
     }
 
+    public function reports ()
+    {
+        return $this->hasMany('App\Report');
+    }
+
 }
