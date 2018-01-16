@@ -20,15 +20,16 @@
                                             <div class="dropdown-menu" aria-labelledby="dropdown-class">
                                                 <a class="dropdown-item" href="#">View Class</a>
                                                 <a class="dropdown-item" href="/classes">View All Classes</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                <a class="dropdown-item" href="/class/add">Add a Class</a>
                                             </div>
                                         </li>
                                         <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle"  id="dropdown-pupil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pupils</a>
                                         <div class="dropdown-menu" aria-labelledby="dropdown-pupil">
-                                            <a class="dropdown-item" href="/pupils/">View Class List</a>
+                                            <a class="dropdown-item" href="/pupils/">View All Pupils</a>
                                             <a class="dropdown-item" href="/pupil/add">Add a Pupil</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            <a class="dropdown-item" href="/pupils/">Edit a Pupil</a>
+                                            <a class="dropdown-item" href="/pupil/promote/">Promote Pupils</a>
                                         </div>
                                     </li>
                                     @endif
@@ -41,7 +42,7 @@
                                 @else
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        {{ Auth::user()->name }}
+                                        {{ Auth::user()->firstname }}
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="account">

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\ClassGroup;
 
@@ -15,7 +17,7 @@ class ClassGroupController extends Controller
     public function index()
     {
         //
-        return view('class.index', ['classes' => ClassGroup::with('teacher')->withCount('pupils')->get()->toArray()]);
+        return view('class.index', ['classes' => ClassGroup::with('teacher','grade')->withCount('pupils')->get()->toArray()]);
     }
 
     /**
@@ -26,6 +28,9 @@ class ClassGroupController extends Controller
     public function create()
     {
         //
+
+        return view('class.create', [ 'teachers' => User::all(), 'year' => Carbon::now()->year ]);
+
     }
 
     /**
@@ -37,6 +42,22 @@ class ClassGroupController extends Controller
     public function store(Request $request)
     {
         //
+        $class = new ClassGroup();
+        $class->teacher_id = $request->teacher;
+        $class->grade_id = $request->teacher;
+        $class->year = $request->year;
+        $class->class_code = $request->class_code;
+        if ($class->save())
+        {
+            $request->session()->flash('save-message', "Class " . $class->class_code .  " was added successfully");
+            $request->session()->flash('save-status', "success");
+        }
+        else
+        {
+            $request->session()->flash('save-message', "There was a saving error");
+            $request->session()->flash('save-status', "error");
+        }
+        return redirect(url('/class/add'));
     }
 
     /**

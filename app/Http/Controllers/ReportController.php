@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mark;
 use App\Pupil;
 use App\Report;
 use App\ClassGroup;
@@ -55,12 +56,15 @@ class ReportController extends Controller
 
         $class = ClassGroup::where('id', '=', $report->report_class->first()->id)->with('grade')->get()->first();
 
-        $subject_data = SubjectGroup::where('grade_id', '=', $class->grade->id)->with('subjects')->get();
+        $subject_data = SubjectGroup::where('grade_id', '=', $class->grade->id)->with('subjects.marks')->get();
+
+        $term_averages = Mark::where('report_id', '=', $report->id)->average('value')->get();
 
         return view ('report.show', [
             'report' => $report,
             'class' => $class,
-            'subject_data' => $subject_data
+            'subject_data' => $subject_data,
+            'term_averages' => $term_averages
             ]);
     }
 
@@ -96,5 +100,47 @@ class ReportController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Take the float mark and convert it to 1 -7 scale and return
+     *
+     * @param  float  $mark
+     * @return int $mark
+     */
+    public static function convert_mark($mark)
+    {
+        if ( $mark >= 80.0 )
+        {
+            return $mark = 7;
+        }
+        elseif (  $mark < 80.0 && $mark >= 70.0 )
+        {
+            return $mark = 6;
+        }
+        elseif (  $mark < 70.0 && $mark >= 60.0 )
+        {
+            return $mark = 5;
+        }
+        elseif (  $mark < 60.0 && $mark >= 50.0 )
+        {
+            return $mark = 4;
+        }
+        elseif (  $mark < 50.0 && $mark >= 40.0 )
+        {
+            return $mark = 3;
+        }
+        elseif (  $mark < 40.0 && $mark >= 30.0 )
+        {
+            return $mark = 2;
+        }
+        elseif (  $mark < 30.0 && $mark >= 0.0 )
+        {
+            return $mark = 1;
+        }
+        else
+        {
+            return $mark = 'error with mark';
+        }
     }
 }

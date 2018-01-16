@@ -33,7 +33,10 @@
                             <td>{{ $pupil->cemis_num }}</td>
                             <td>{{ $pupil->dob }}</td>
                             <td style="text-transform: uppercase">{{ $pupil->language }}</td>
-                            <td><a class="btn btn-dark" href="/pupil/view/{{ $pupil->id }}">View</a></td>
+                            <td>
+                                <a class="btn btn-dark" href="/pupil/view/{{ $pupil->id }}">View</a>
+                                <a class="btn btn-light" href="/pupil/edit/{{ $pupil->id }}">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -41,3 +44,17 @@
             </div>
         </div>
     @endsection
+@section('scripts')
+    @parent
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable(
+                {
+                    paging: false,
+                    info: false,
+                    order: [[ 1, "asc" ]]
+                }
+            );
+        } );
+    </script>
+@endsection

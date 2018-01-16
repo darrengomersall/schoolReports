@@ -22,5 +22,9 @@ class Grade extends Model
         return $this->hasManyThrough('App\Pupil', 'App\ClassGroup', 'grade_id', 'class_id', 'id');
     }
 
+    public function subject_groups ()
+    {
+        return $this->hasMany('App\SubjectGroup');
+    }
 
 }

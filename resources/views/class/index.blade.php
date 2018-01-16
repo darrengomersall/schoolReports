@@ -22,8 +22,8 @@
                     <tbody>
                     @foreach($classes as $class)
                         <tr>
-                            <td>{{ $class['class_code'] }}</td>
-                            <td>{{ $class['teacher']['name'] }}</td>
+                            <td>{{ $class['grade']['name'] }}</td>
+                            <td>{{ $class['teacher']['firstname'] . " " . $class['teacher']['lastname'] }}</td>
                             <td>{{ $class['class_code'] }}</td>
                             <td>{{ $class['pupils_count'] }}</td>
                             <td><a class="btn btn-dark" href="/class/view/{{ $class['id'] }}">View Class</a> </td>

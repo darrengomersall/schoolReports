@@ -12,4 +12,9 @@ class Subject extends Model
     {
         return $this->belongsTo('App\SubjectGroup');
     }
+
+    public function marks ()
+    {
+        return $this->hasMany('App\Mark');
+    }
 }

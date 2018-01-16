@@ -1,6 +1,3 @@
-<?php
-var_dump($pupil)
-?>
 @extends('partials.base')
 @section('content')
     <div class="row">
@@ -57,17 +54,16 @@ var_dump($pupil)
             <table id="table_id" class="table table-striped">
                 <thead class="thead-default">
                 <th>Year</th>
-                <th>Surname</th>
-                <th>CEMIS #</th>
-                <th>Date of Birth</th>
-                <th>Home Language</th>
+                <th>Teacher</th>
+                <th>Class Code</th>
                 <th>Actions</th>
                 </thead>
                 <tbody>
                 @foreach($pupil->reports as $report)
                     <tr>
-                        <td>{{ $report->id }}</td>
-                        <td style="text-transform: uppercase">{{ $pupil->language }}</td>
+                        <td>{{ $pupil->reports->first()->report_class->year }}</td>
+                        <td>{{ $pupil->reports->first()->report_class->teacher->firstname . " " . $pupil->reports->first()->report_class->teacher->lastname }}</td>
+                        <td>{{ $pupil->reports->first()->report_class->class_code }}</td>
                         <td><a class="btn btn-dark" href="/report/view/{{ $report->id }}">View Report</a></td>
                     </tr>
                 @endforeach

@@ -17,6 +17,9 @@ class Report extends Model
         return $this->hasOne('App\ClassGroup', 'id', 'class_id');
     }
 
-
+    public function marks ()
+    {
+        return $this->hasMany('App\Mark');
+    }
 
 }

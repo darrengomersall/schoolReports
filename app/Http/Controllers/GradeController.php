@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ClassGroup;
+use App\SubjectGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Grade;
@@ -54,7 +55,8 @@ class GradeController extends Controller
             // Total number of pupils in the grade
             'grade' => Grade::where('id', '=', $id)->withCount('pupils', 'classes')->get()->first(),
             // Number of pupils in each class
-            'classes' => ClassGroup::where('grade_id', '=', $id)->withCount('pupils')->get()
+            'classes' => ClassGroup::where('grade_id', '=', $id)->withCount('pupils')->get(),
+            'subject_groups' => SubjectGroup::where('grade_id', '=', $id)->withCount('subjects')->get()
             ]);
     }
 

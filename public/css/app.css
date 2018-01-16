@@ -96,6 +96,19 @@
     border-color: #732b90;
 }
 
+.btn-light {
+    background-color: #e49273;
+    border-color: #e49273;
+    color: #ffffff  ;
+}
+
+.btn-light:hover {
+    background-color: #d74e09;
+    border-color: #d74e09;
+    color: #ffffff  ;
+
+}
+
 .random {
     color: #7180ac;
     color: #a8d0db;
@@ -153,6 +166,11 @@ hr {
     border-top-style: dotted;
 }
 
+main {
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
 ul {
     margin-bottom: 0.5rem;
 }
@@ -161,6 +179,9 @@ table th, table td {
     text-align: center;
 }
 
+.badge-dark {
+    background-color: #23408f;
+}
 
 
 /*
@@ -224,17 +245,37 @@ table th, table td {
 
 /*
 |--------------------------------------------------------------------------
-| FOOTER
+| REPORT
 |--------------------------------------------------------------------------
  */
+
+.subject-group {
+    margin-top: 2rem;
+}
+
+table .subject-name {
+    max-width: 450px;
+}
+
+
 
 
 
 /*
 |--------------------------------------------------------------------------
-| HOME PAGE
+| PUPIL
 |--------------------------------------------------------------------------
  */
+
+.save-status {
+    background-color: #50ffb1;
+    color: #119da4 ;
+}
+
+.save-status.error{
+    background-color: #d74e09 ;
+    color: #ba324f;
+}
 
 
 /*

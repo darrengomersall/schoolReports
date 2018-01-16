@@ -1,7 +1,3 @@
-<?php
-//echo "<pre>";
-//var_dump($subject_data->toArray())
-?>
     @extends('partials.base')
     @section('content')
         <div class="row">
@@ -19,15 +15,15 @@
         </div>
         <hr>
         @foreach($subject_data as $subject_group)
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2 style="background-color: #23408f; color: #ffffff; font-family: 'LatoBold', Helvetica, Arial, sans-serif">
-                        {{ $subject_group->title }}
+            <div class="row subject-group">
+                <div class="col-lg-12">
+                    <h2 >
+                       <span class="badge badge-dark">{{ $subject_group->title }}</span>
                     </h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <table class="table table-striped">
                         <thead class="thead-default">
                             <tr>
@@ -41,11 +37,10 @@
                         <tbody>
                         @foreach($subject_group->subjects as $subject)
                             <tr>
-                                <td>{{ $subject->name }}</td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td>4</td>
+                                <td class="subject-name">{{ $subject->name }}</td>
+                                    @foreach($subject->marks as $mark)
+                                        <td>{{ App\Http\Controllers\ReportController::convert_mark($mark->value) }}</td>
+                                    @endforeach
                             </tr>
                         @endforeach
                         </tbody>

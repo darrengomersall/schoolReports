@@ -26,6 +26,10 @@ Auth::routes();
 |
 */
 
+Route::get('/test', function () {
+    return view('test', ['pupils' => \App\Pupil::with('current_class.grade')->get()]);
+});
+
 Route::group([ 'middleware' => ['auth'] ], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
@@ -56,10 +60,10 @@ Route::group([ 'middleware' => ['auth'] ], function () {
     Route::get('/class/view/{id}', 'ClassGroupController@show');
 
     // ADD NEW - FORM
-    Route::get('/pupil/add', 'ClassGroupController@create');
+    Route::get('/class/add', 'ClassGroupController@create');
 
     // ADD NEW - SAVE
-    Route::post('/pupil/store', 'ClassGroupController@store');
+    Route::post('/class/store', 'ClassGroupController@store');
 
     /*------------- | PUPILS | ------------- */
     // VIEW ALL
@@ -73,6 +77,15 @@ Route::group([ 'middleware' => ['auth'] ], function () {
 
     // ADD NEW - SAVE
     Route::post('/pupil/store', 'PupilController@store');
+
+    // EDIT SINGLE
+    Route::get('/pupil/edit/{id}', 'PupilController@edit');
+
+    // PROMOTE SELECT GRADE
+    Route::get('/pupil/promote/', 'PupilController@promote');
+    Route::get('/pupils/promote/grade/{id}', 'PupilController@promoteGrade');
+    Route::post('/pupils/promote/', 'PupilController@promoteStore');
+
 
     /*------------- | REPORTS | ------------- */
     // VIEW SINGLE
