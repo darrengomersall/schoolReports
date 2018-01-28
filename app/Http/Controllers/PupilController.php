@@ -133,7 +133,9 @@ class PupilController extends Controller
 
     public function promoteGrade ($id)
     {
-        return view('pupil.promote.grade' , [ 'grade' => Grade::where('id', '=', $id)->with('pupils')->get() ]);
+        return view('pupil.promote.grade' , [
+            'grade' => Grade::where('id', '=', $id)->with('pupils')->get(),
+            'promote_class' => ClassGroup::where('')]);
     }
 
     public function promoteStore ()
