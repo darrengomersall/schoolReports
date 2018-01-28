@@ -1,5 +1,6 @@
 
 <?php
+//INSERT FTP USER HERE
 $hetznerUsername = 'grademvkcv';
 if (strpos(__DIR__, $hetznerUsername)) {
     // production
