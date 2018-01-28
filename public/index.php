@@ -3,8 +3,8 @@
 $hetznerUsername = 'grademvkcv';
 if (strpos(__DIR__, $hetznerUsername)) {
     // production
-    require '/usr/home/' . $hetznerUsername . '/grades/bootstrap/autoload.php';
-    $app = require_once '/usr/home/' . $hetznerUsername . '/grades/bootstrap/app.php';
+    require '/usr/home/' . $hetznerUsername . '/laravel/bootstrap/autoload.php';
+    $app = require_once '/usr/home/' . $hetznerUsername . '/laravel/bootstrap/app.php';
 } else {
     // non-production
     require __DIR__.'/../bootstrap/autoload.php';
