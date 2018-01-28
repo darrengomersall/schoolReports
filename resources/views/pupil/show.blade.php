@@ -61,10 +61,13 @@
                 <tbody>
                 @foreach($pupil->reports as $report)
                     <tr>
-                        <td>{{ $pupil->reports->first()->report_class->year }}</td>
-                        <td>{{ $pupil->reports->first()->report_class->teacher->firstname . " " . $pupil->reports->first()->report_class->teacher->lastname }}</td>
-                        <td>{{ $pupil->reports->first()->report_class->class_code }}</td>
-                        <td><a class="btn btn-dark" href="/report/view/{{ $report->id }}">View Report</a></td>
+                        <td style="width: 20%; max-width: 20%">{{ $pupil->reports->first()->report_class->year }}</td>
+                        <td style="width: 20%; max-width: 20%">{{ $pupil->reports->first()->report_class->teacher->firstname . " " . $pupil->reports->first()->report_class->teacher->lastname }}</td>
+                        <td style="width: 20%; max-width: 20%">{{ $pupil->reports->first()->report_class->class_code }}</td>
+                        <td style="width: 20%; max-width: 20%">
+                            <a class="btn btn-dark" href="/report/view/{{ $report->id }}">View Report</a>
+                            <a class="btn btn-dark" href="/report/download/{{ $report->id }}">Download Report</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

@@ -97,6 +97,10 @@ Route::group([ 'middleware' => ['auth'] ], function () {
     // VIEW SINGLE
     Route::get('/report/view/{id}', 'ReportController@show');
 
+    // VIEW SINGLE
+    Route::get('/report/download/{id}', 'ReportController@download');
+
+
     /*------------- | MARKS | ------------- */
 
     // ADD NEW - FORM

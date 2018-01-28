@@ -9,6 +9,7 @@ use App\ClassGroup;
 use App\Subject;
 use App\SubjectGroup;
 use Illuminate\Http\Request;
+use PDF;
 
 class ReportController extends Controller
 {
@@ -100,6 +101,34 @@ class ReportController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function download ($id)
+    {
+        $report = Report::where('id', '=', $id)->with('pupil', 'report_class')->get()->first();
+
+        $class = ClassGroup::where('id', '=', $report->report_class->first()->id)->with('grade')->get()->first();
+
+        $subject_data = SubjectGroup::where('grade_id', '=', $class->grade->id)->with('subjects.marks')->get();
+
+        $term_averages = Mark::where('report_id', '=', $report->id)->average('value')->get();
+
+        $pdf = PDF::loadView('report.pdf', [
+            'report' => $report,
+            'class' => $class,
+            'subject_data' => $subject_data,
+            'term_averages' => $term_averages
+        ]);
+        $filename = 'Report' . '_' . $report->pupil->firstname . "_" . $report->pupil->lastname . "_" . $class->grade->name .  '_' .  $class->year . '.pdf';
+        return $pdf->download($filename);
+
+
+        return view ('report.pdf', [
+            'report' => $report,
+            'class' => $class,
+            'subject_data' => $subject_data,
+            'term_averages' => $term_averages
+        ]);
     }
 
     /**
