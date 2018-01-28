@@ -35,11 +35,13 @@ Route::group([ 'middleware' => ['auth'] ], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
     /*------------- | STAFF | ------------- */
+
     // TEACHERS
     Route::get('/teachers/', 'StaffController@index');
 
 
     /*------------- | GRADES | ------------- */
+
     // VIEW ALL
     Route::get('/grades/', 'GradeController@index');
 
@@ -66,6 +68,7 @@ Route::group([ 'middleware' => ['auth'] ], function () {
     Route::post('/class/store', 'ClassGroupController@store');
 
     /*------------- | PUPILS | ------------- */
+
     // VIEW ALL
     Route::get('/pupils/', 'PupilController@index');
 
@@ -86,10 +89,18 @@ Route::group([ 'middleware' => ['auth'] ], function () {
     Route::get('/pupils/promote/grade/{id}', 'PupilController@promoteGrade');
     Route::post('/pupils/promote/', 'PupilController@promoteStore');
 
-
     /*------------- | REPORTS | ------------- */
+
     // VIEW SINGLE
     Route::get('/report/view/{id}', 'ReportController@show');
+
+    /*------------- | MARKS | ------------- */
+
+    // ADD NEW - FORM
+    Route::get('/report/{id}/mark/add', 'MarkController@create');
+
+    // ADD NEW - FORM
+    Route::post('/report/{id}/mark/save', 'MarkController@store');
 
 
 } );
