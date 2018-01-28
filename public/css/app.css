@@ -127,7 +127,15 @@
     color: #8b8c89;
 }
 
+.message.error {
+   background-color: #f2545b;
+    color: #a93f55 ;
+}
 
+.message.success {
+    background-color: #7de2d1 ;
+    color: #339989;
+}
 
 /*
 |--------------------------------------------------------------------------
