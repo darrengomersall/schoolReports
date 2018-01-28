@@ -27,4 +27,9 @@ class Grade extends Model
         return $this->hasMany('App\SubjectGroup');
     }
 
+    public function teachers ()
+    {
+        //return $this->hasManyThrough('App\User','App\ClassGroup','grade_id', 'id', 'id');
+    }
+
 }

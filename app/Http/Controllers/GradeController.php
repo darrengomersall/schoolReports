@@ -56,7 +56,8 @@ class GradeController extends Controller
             'grade' => Grade::where('id', '=', $id)->withCount('pupils', 'classes')->get()->first(),
             // Number of pupils in each class
             'classes' => ClassGroup::where('grade_id', '=', $id)->withCount('pupils')->get(),
-            'subject_groups' => SubjectGroup::where('grade_id', '=', $id)->withCount('subjects')->get()
+            'subject_groups' => SubjectGroup::where('grade_id', '=', $id)->withCount('subjects')->get(),
+            //'teachers' => Grade::with('teachers')->get()
             ]);
     }
 
