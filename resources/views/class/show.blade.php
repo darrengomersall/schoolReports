@@ -1,14 +1,17 @@
 @extends('partials.base')
     @section('content')
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
                 <h1>
                     Class Details: {{ $class->class_code }} - {{ $class->teacher->firstname . " " . $class->teacher->lastname }}
                 </h1>
             </div>
+            <div class="col-lg-4">
+                <a href="/class/download/{{$class->id}}" class="btn btn-dark">DOWNLOAD CLASS LIST</a>
+            </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
                 <h3>
                     Number of Pupils: {{ $class->pupils_count }}
                 </h3>

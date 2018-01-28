@@ -67,6 +67,9 @@ Route::group([ 'middleware' => ['auth'] ], function () {
     // ADD NEW - SAVE
     Route::post('/class/store', 'ClassGroupController@store');
 
+    // ADD NEW - SAVE
+    Route::get('/class/download/{id}', 'ClassGroupController@download');
+
     /*------------- | PUPILS | ------------- */
 
     // VIEW ALL

@@ -6,6 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\ClassGroup;
+use PDF;
 
 class ClassGroupController extends Controller
 {
@@ -104,5 +105,13 @@ class ClassGroupController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function download ($id)
+    {
+        $class = ClassGroup::where('id', '=', $id)->with('teacher', 'pupils')->withCount('pupils')->get()->first();
+        $pdf = PDF::loadView('class.pdf', [ 'class' => $class ]);
+        $filename = 'Class_List' . '_' . 'Grade '. $class->id . '_' . $class->teacher->lastname . '.pdf';
+        return $pdf->download($filename);
     }
 }
