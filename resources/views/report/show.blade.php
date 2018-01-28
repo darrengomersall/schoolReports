@@ -1,19 +1,28 @@
     @extends('partials.base')
     @section('content')
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-19">
                 <h1>
                     Report:
                 </h1>
                 <h2>
-                        <span>{{ $report->pupil->firstname . " " . $report->pupil->lastname }}</span> for {{ $class->year }} in <span>{{ $class->grade->name }}</span>
+                    <span>{{ $report->pupil->firstname . " " . $report->pupil->lastname }}</span> for {{ $class->year }} in <span>{{ $class->grade->name }}</span>
                 </h2>
             </div>
-            <div class="col-lg-2">
+
+            <div class="col-lg-3">
+                <a href="/report/{{ $report->id }}/mark/add" class="btn btn-dark">Add Marks</a>
                <a href="/pupil/view/{{ $report->pupil->id }}" class="btn btn-dark">Return to Pupil</a>
             </div>
         </div>
         <hr>
+        @if(\Illuminate\Support\Facades\Session::has('message'))
+            <div class="row message {{ \Illuminate\Support\Facades\Session::get('alert') }}">
+                <div>
+                    <h3>{{ \Illuminate\Support\Facades\Session::get('message') }}</h3>
+                </div>
+            </div>
+        @endif
         @foreach($subject_data as $subject_group)
             <div class="row subject-group">
                 <div class="col-lg-12">
